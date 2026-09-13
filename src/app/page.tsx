@@ -16,9 +16,9 @@ export default function Home() {
           className="object-cover object-[50%_42%]"
         />
       </section>
-      <JeansRow />
-      <DenimStory />
       <DogToys />
+      <DenimStory />
+      <JeansRow />
     </main>
   );
 }

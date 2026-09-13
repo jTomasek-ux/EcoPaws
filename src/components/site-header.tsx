@@ -16,11 +16,11 @@ export function SiteHeader() {
     >
       <div className="relative mx-auto flex max-w-[1440px] flex-col items-center gap-3 px-4 py-4 md:h-[92px] md:flex-row md:justify-between md:px-14 md:py-0">
         <nav className="order-2 flex w-full items-center justify-between gap-4 md:order-1 md:w-auto md:gap-8">
-          <Link href="/#jeans" className="text-[13px] leading-none md:text-[14px]">
-            Shop Jeans
-          </Link>
           <Link href="/#dog-toys" className="text-[13px] leading-none md:text-[14px]">
             Shop Dog Toys
+          </Link>
+          <Link href="/#jeans" className="text-[13px] leading-none md:text-[14px]">
+            Shop Jeans
           </Link>
           <a
             href="/account/login"

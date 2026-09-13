@@ -6,7 +6,7 @@ import { JeansRow } from "@/components/home/jeans-row";
 export default function Home() {
   return (
     <main className="bg-white text-black">
-      <section className="relative w-full overflow-hidden aspect-[1440/792]">
+      <section className="relative h-dvh max-h-dvh w-full overflow-hidden">
         <Image
           src="/home/hero-dog.jpg"
           alt="Golden retriever on a leash in the mountains"

@@ -16,10 +16,10 @@ export function SiteHeader() {
     >
       <div className="relative mx-auto flex h-[92px] max-w-[1440px] items-center justify-between px-6 md:px-14">
         <nav className="flex items-center gap-6 md:gap-8">
-          <Link href="/#jeans" className="text-[16px] md:text-[20px] leading-none">
+          <Link href="/#jeans" className="text-[13px] leading-none md:text-[14px]">
             Shop Jeans
           </Link>
-          <Link href="/#dog-toys" className="text-[16px] md:text-[20px] leading-none">
+          <Link href="/#dog-toys" className="text-[13px] leading-none md:text-[14px]">
             Shop Dog Toys
           </Link>
         </nav>
@@ -30,10 +30,10 @@ export function SiteHeader() {
           EcoPaws
         </Link>
         <nav className="flex items-center gap-6 md:gap-8">
-          <a href="/account/login" className="text-[16px] md:text-[20px] leading-none">
+          <a href="/account/login" className="text-[13px] leading-none md:text-[14px]">
             Profile
           </a>
-          <Link href="/cart" className="text-[16px] md:text-[20px] leading-none">
+          <Link href="/cart" className="text-[13px] leading-none md:text-[14px]">
             Bag
           </Link>
         </nav>

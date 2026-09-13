@@ -1,17 +1,64 @@
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export function DenimStory() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+
+      mm.add(
+        {
+          isDesktop: "(min-width: 1024px)",
+          reduceMotion: "(prefers-reduced-motion: reduce)",
+        },
+        (context) => {
+          const { isDesktop, reduceMotion } = context.conditions ?? {};
+          if (!isDesktop || reduceMotion) return;
+
+          ScrollTrigger.create({
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom bottom",
+            pin: headingRef.current,
+            pinSpacing: false,
+          });
+        },
+      );
+
+      return () => mm.revert();
+    },
+    { scope: sectionRef },
+  );
+
   return (
-    <section className="grid items-start gap-6 px-[0.5%] py-8 lg:grid-cols-[minmax(0,502fr)_minmax(0,957fr)] lg:gap-0">
-      <h2 className="max-w-[502px] text-[clamp(40px,6.67vw,96px)] leading-[0.95]">
-        Radically Reclaimed Denim.
-      </h2>
-      <div className="relative aspect-[957/638] w-full overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative grid items-start gap-8 px-[1.5%] py-10 lg:min-h-[160vh] lg:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)] lg:gap-10 lg:py-16"
+    >
+      <div className="min-w-0">
+        <h2
+          ref={headingRef}
+          className="max-w-[18ch] pr-4 text-[clamp(36px,5vw,80px)] leading-[0.95]"
+        >
+          Radically Reclaimed Denim.
+        </h2>
+      </div>
+      <div className="relative min-h-[50vh] w-full overflow-hidden lg:min-h-[140vh]">
         <Image
           src="/home/denim-texture.jpg"
           alt="Close-up of reclaimed denim fabric"
           fill
-          sizes="(min-width: 1024px) 66vw, 100vw"
+          sizes="(min-width: 1024px) 58vw, 100vw"
           className="object-cover"
         />
       </div>

@@ -6,6 +6,7 @@ import {
   createShopifyRequestContext,
   createStorefrontClient,
 } from "@shopify/hydrogen";
+import { getPublicStorefrontToken, getStoreDomain } from "@/lib/shopify/env";
 
 export const getStorefrontClient = cache(async () => {
   const requestHeaders = await headers();
@@ -18,8 +19,8 @@ export const getStorefrontClient = cache(async () => {
     type: "public",
     requestContext,
     config: {
-      storeDomain: process.env.NEXT_PUBLIC_STORE_DOMAIN!,
-      publicStorefrontToken: process.env.NEXT_PUBLIC_STOREFRONT_API_TOKEN,
+      storeDomain: getStoreDomain(),
+      publicStorefrontToken: getPublicStorefrontToken(),
     },
   });
 });

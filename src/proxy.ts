@@ -4,6 +4,7 @@ import {
   handleShopifyRoutes,
 } from "@shopify/hydrogen";
 import { NextResponse, type NextRequest } from "next/server";
+import { getPublicStorefrontToken, getStoreDomain } from "@/lib/shopify/env";
 import { cartHandlers, customerAccountHandlers } from "@/lib/shopify/handlers";
 import { routeTemplates } from "@/lib/shopify/route-templates";
 import { createSessionManager } from "@/lib/shopify/session";
@@ -17,8 +18,8 @@ export async function proxy(request: NextRequest) {
     type: "public",
     requestContext,
     config: {
-      storeDomain: process.env.NEXT_PUBLIC_STORE_DOMAIN!,
-      publicStorefrontToken: process.env.NEXT_PUBLIC_STOREFRONT_API_TOKEN,
+      storeDomain: getStoreDomain(),
+      publicStorefrontToken: getPublicStorefrontToken(),
     },
   });
   const sessionManager = await createSessionManager(request);

@@ -54,21 +54,24 @@ export function DogToys() {
           },
         });
 
-        intro
-          .from(fromTitle, { x: -48, autoAlpha: 0, duration: 0.7 }, 0)
-          .from(toTitle, { x: 48, autoAlpha: 0, duration: 0.7 }, 0.08)
-          .from(
-            cards,
-            {
-              y: (i) => 36 + i * 14,
-              autoAlpha: 0,
-              scale: (i) => 0.96 - i * 0.015,
-              rotate: (i) => (i === 0 ? -5 : i === 1 ? 4 : 0),
-              duration: 0.85,
-              stagger: 0.13,
-            },
-            0.18,
-          );
+        if (fromTitle) {
+          intro.from(fromTitle, { x: -48, autoAlpha: 0, duration: 0.7 }, 0);
+        }
+        if (toTitle) {
+          intro.from(toTitle, { x: 48, autoAlpha: 0, duration: 0.7 }, 0.08);
+        }
+        intro.from(
+          cards,
+          {
+            y: (i) => 36 + i * 14,
+            autoAlpha: 0,
+            scale: (i) => 0.96 - i * 0.015,
+            rotate: (i) => (i === 0 ? -5 : i === 1 ? 4 : 0),
+            duration: 0.85,
+            stagger: 0.13,
+          },
+          0.18,
+        );
 
         floats.forEach((el, i) => {
           gsap.to(el, {

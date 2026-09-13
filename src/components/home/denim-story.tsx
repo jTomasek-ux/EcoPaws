@@ -10,7 +10,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export function DenimStory() {
   const sectionRef = useRef<HTMLElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
+  const copyRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
@@ -29,7 +29,7 @@ export function DenimStory() {
             trigger: sectionRef.current,
             start: "top top",
             end: "bottom bottom",
-            pin: headingRef.current,
+            pin: copyRef.current,
             pinSpacing: false,
           });
         },
@@ -46,12 +46,15 @@ export function DenimStory() {
       className="relative grid items-start gap-8 px-[1.5%] py-10 lg:min-h-[160vh] lg:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)] lg:gap-10 lg:py-16"
     >
       <div className="min-w-0">
-        <h2
-          ref={headingRef}
-          className="max-w-[18ch] pr-4 text-[clamp(36px,5vw,80px)] leading-[0.95]"
-        >
-          Radically Reclaimed Denim.
-        </h2>
+        <div ref={copyRef} className="pr-4">
+          <h2 className="max-w-[18ch] text-[clamp(36px,5vw,80px)] leading-[0.95]">
+            Radically Reclaimed Denim.
+          </h2>
+          <p className="mt-5 text-[15px] leading-[1.35] lg:mt-6">
+            Discarded jeans. Cut and remade.{" "}
+            <span className="whitespace-nowrap">Nothing wasted.</span>
+          </p>
+        </div>
       </div>
       <div className="relative min-h-[50vh] w-full overflow-hidden lg:min-h-[140vh]">
         <Image

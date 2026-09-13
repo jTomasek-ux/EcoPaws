@@ -3,12 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const COLORS = [
-  { name: "Indigo", hex: "#1e3a5f" },
-  { name: "Faded", hex: "#8a9a7b" },
-  { name: "Green", hex: "#5c6b4a" },
-] as const;
-
 type Jean = {
   src: string;
   hoverSrc: string;
@@ -16,7 +10,6 @@ type Jean = {
   title: string;
   price: string;
   href: string;
-  colorIndex: number;
 };
 
 const jeans: Jean[] = [
@@ -26,8 +19,7 @@ const jeans: Jean[] = [
     alt: "Blue wide-leg jeans",
     title: "Blue Jeans",
     price: "20$",
-    href: "/collections",
-    colorIndex: 0,
+    href: "/#jeans",
   },
   {
     src: "/home/jeans-2.jpg",
@@ -35,8 +27,7 @@ const jeans: Jean[] = [
     alt: "Person wearing faded wide-leg jeans and a white tank",
     title: "Faded Jeans",
     price: "20$",
-    href: "/collections",
-    colorIndex: 1,
+    href: "/#jeans",
   },
   {
     src: "/home/jeans-3.jpg",
@@ -44,8 +35,7 @@ const jeans: Jean[] = [
     alt: "Person wearing dark wide-leg jeans",
     title: "Indigo Jeans",
     price: "20$",
-    href: "/collections",
-    colorIndex: 0,
+    href: "/#jeans",
   },
   {
     src: "/home/jeans-4.jpg",
@@ -53,8 +43,7 @@ const jeans: Jean[] = [
     alt: "Faded green wide-leg jeans",
     title: "Reclaimed Jeans",
     price: "20$",
-    href: "/collections",
-    colorIndex: 2,
+    href: "/#jeans",
   },
 ];
 
@@ -114,24 +103,6 @@ function JeanCard({ item }: { item: Jean }) {
         <div className="pt-3">
           <p className="text-[15px] leading-tight">{item.title}</p>
           <p className="mt-0.5 text-[15px] leading-tight">{item.price}</p>
-          <ul className="mt-2 flex items-end gap-1.5" aria-label="Available washes">
-            {COLORS.map((color, index) => (
-              <li
-                key={color.name}
-                title={color.name}
-                className={
-                  index === item.colorIndex
-                    ? "h-3.5 w-3.5 border-b-2 border-black pb-0.5"
-                    : "h-3 w-3"
-                }
-              >
-                <span
-                  className="block size-full"
-                  style={{ backgroundColor: color.hex }}
-                />
-              </li>
-            ))}
-          </ul>
         </div>
       </Link>
       <button

@@ -15,10 +15,10 @@ export default function NotFound() {
       <p className="text-sm tracking-[0.2em] uppercase text-[var(--muted)]">EcoPaws</p>
       <h1 className="text-4xl font-semibold tracking-tight">Page not found</h1>
       <p className="text-[var(--muted)]">
-        That path is not in this storefront. Browse the shop instead.
+        That path is not in this storefront.
       </p>
-      <a className="w-fit underline underline-offset-4" href="/collections">
-        View collections
+      <a className="w-fit underline underline-offset-4" href="/">
+        Back home
       </a>
     </main>
   );

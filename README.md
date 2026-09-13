@@ -16,7 +16,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). Product data comes from Shopify (mock catalog by default).
+Open [http://localhost:3000](http://localhost:3000). The visual homepage is local. Cart and account still go through Shopify.
 
 ## Connect a real Shopify store
 

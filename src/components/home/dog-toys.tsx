@@ -37,21 +37,21 @@ export function DogToys() {
 
       <div className="grid grid-cols-2 gap-5 lg:grid-cols-[minmax(0,288fr)_minmax(0,288fr)_minmax(0,356fr)_minmax(0,356fr)]">
         <Link
-          href="/collections/playful-parade"
+          href="/#dog-toys"
           className="relative aspect-288/442 bg-[#f8f8f8]"
         >
           <RotatedToy src="/home/toy-1.png" alt="Denim bone dog toy" />
         </Link>
 
         <Link
-          href="/collections/playful-parade"
+          href="/#dog-toys"
           className="relative aspect-288/442 bg-[#f8f8f8]"
         >
           <RotatedToy src="/home/toy-2.png" alt="Two-tone denim bone dog toy" />
         </Link>
 
         <Link
-          href="/collections/playful-parade"
+          href="/#dog-toys"
           className="relative aspect-356/442 overflow-hidden bg-[#f8f8f8]"
         >
           <div className="absolute inset-x-0 top-[-7.5%] h-[107.5%]">
@@ -66,7 +66,7 @@ export function DogToys() {
         </Link>
 
         <Link
-          href="/collections/playful-parade"
+          href="/#dog-toys"
           className="relative aspect-356/442 overflow-hidden bg-[#f8f8f8]"
         >
           <div className="absolute left-[-5.6%] top-[-7.5%] h-[118%] w-[196%]">

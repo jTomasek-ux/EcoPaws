@@ -26,11 +26,11 @@ function RotatedToy({
 export function DogToys() {
   return (
     <section id="dog-toys" className="overflow-hidden px-[1.45%] pb-24 pt-4">
-      <div className="mb-6 flex items-end justify-between gap-4">
-        <h2 className="shrink-0 whitespace-nowrap text-[clamp(22px,3.6vw,56px)] leading-none">
+      <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
+        <h2 className="whitespace-nowrap text-[clamp(22px,3.6vw,56px)] leading-none">
           From dog lovers
         </h2>
-        <h2 className="shrink-0 whitespace-nowrap text-right text-[clamp(22px,3.6vw,56px)] leading-none">
+        <h2 className="whitespace-nowrap text-[clamp(22px,3.6vw,56px)] leading-none sm:text-right">
           To Dog Lovers
         </h2>
       </div>

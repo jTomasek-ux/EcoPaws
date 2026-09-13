@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Archivo_Black } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const archivoBlack = Archivo_Black({
+  weight: "400",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-display",
 });
 
 export const metadata: Metadata = {
@@ -18,16 +14,13 @@ export const metadata: Metadata = {
     default: "EcoPaws",
     template: "%s · EcoPaws",
   },
-  description: "Sustainable pet goods. Next.js storefront powered by Shopify.",
+  description: "Radically reclaimed denim. From dog lovers to dog lovers.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col font-sans">
+    <html lang="en" className={`${archivoBlack.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col bg-white font-sans text-black">
         <SiteHeader />
         {children}
       </body>

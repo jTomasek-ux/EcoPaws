@@ -1,19 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6f1e8;
-  --foreground: #1f2a1d;
-  --surface: #ece4d4;
-  --muted: #5c6758;
-  --line: #d7ccb8;
-  --accent: #2f5d3a;
+  --background: #ffffff;
+  --foreground: #000000;
+  --surface: #f8f8f8;
+  --muted: #5c5c5c;
+  --line: #e6e6e6;
+  --accent: #000000;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-display), "Arial Black", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
